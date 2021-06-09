@@ -1,0 +1,41 @@
+<snippet>
+   <content>
+#include &lt;QWidget&gt;
+
+namespace Ui {
+    class ${1};
+};
+
+
+class ${1} : public QWidget
+{
+Q_OBJECT
+
+public:
+   ${1}(QWidget* parent = nullptr );
+   virtual ~${1}();
+
+
+private:
+   Ui::${1}* ui_;
+};
+
+#include "${1}.h"
+#include "ui_${1}.h"
+
+${1}::${1}(QWidget* parent)
+   : QWidget(parent)
+   , ui_(new Ui::${1}())
+{
+   ui_-&gt;setupUi(this);
+}
+
+${1}::~${1}()
+{}
+
+   </content>
+   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+   <tabTrigger>qtwidget</tabTrigger>
+   <!-- Optional: Set a scope to limit where the snippet will trigger -->
+   <scope>source.c++</scope>
+</snippet>

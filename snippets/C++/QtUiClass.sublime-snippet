@@ -1,0 +1,36 @@
+<snippet>
+    <content>
+
+#include &lt;QDialog&gt;
+
+namespace Ui {
+    class ${1};
+};
+
+class ${1} : public QDialog
+{
+Q_OBJECT
+
+public:
+   ${1}(QWidget* parent = nullptr );
+   ~${1}() override = default;
+
+private:
+   Ui::${1}* ui_;
+};
+
+#include "${1}.h"
+#include "ui_${1}.h"
+
+${1}::${1}(QWidget* parent)
+  : QDialog(parent)
+  , ui_(new Ui::${1}())
+{
+   ui_->setupUi(this);
+}
+    </content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>qtuiclass</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>
